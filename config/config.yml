@@ -1,0 +1,14 @@
+development:
+  facebook: https://www.facebook.com/harun.memur
+  twitter: https://twitter.com/HarunMEMUR
+  googleplus: https://plus.google.com/+harunmemur/
+
+test:
+  facebook: test_facebook
+  twitter: test_twitter
+  googleplus: test_gplus
+
+production:
+  facebook: production_facebook
+  twitter: production_twitter
+  googleplus: production_gplus

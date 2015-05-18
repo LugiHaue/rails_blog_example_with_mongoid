@@ -1,0 +1,37 @@
+  <body>
+    <div id="page" class="clearfix">
+
+    <%= render partial: 'partials/header' %>
+
+    <%= render partial: 'partials/header_sub_menu' %>
+
+      <section id="content-holder" class="clearfix">
+        <main class="content">
+          <article class="post-item box">
+            <!--End post content -->
+            <div class="post-det">
+              <h3>
+                <a href="#" title="">
+                <strong><%= @about.title %></strong></a>
+                <!-- End post meta -->
+              </h3>
+
+              <div class="post-entry-content">
+
+              <%= @about.content.html_safe %>
+
+             </div>
+              <!-- end post entry contnet-->
+            </div>
+            <!-- end post det-->
+            <div class="post-footer"></div>
+            <!-- end post footer-->
+          </article>
+          <!-- end Post wrap -->
+        </main>
+        <!-- EndContent-->
+
+      <%= render partial: 'partials/sidebar' %>
+
+      </section>
+      <!-- EndContentHolder-->

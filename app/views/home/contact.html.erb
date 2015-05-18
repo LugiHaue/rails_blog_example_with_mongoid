@@ -1,0 +1,79 @@
+  <body>
+    <div id="page" class="clearfix">
+
+    <%= render partial: 'partials/header' %>
+
+    <%= render partial: 'partials/header_sub_menu' %>
+
+      <section id="content-holder" class="clearfix">
+        <main class="content">
+          <article class="post-item box">
+            <!--End post content -->
+            <div class="post-det">
+              <h3>
+                <a href="#" title="">
+                <strong><%= @contact.title %></strong></a>
+                <!-- End post meta -->
+              </h3>
+              <div class="post-entry-content">
+
+              <%= @contact.content.html_safe %>
+
+            <%= form_tag({controller: 'home' , action: 'contact' } , {method: 'post' , class: 'clearfix' , id: 'contact-form'}  ) do %>
+                  
+                <% unless @contactResult.blank? %>
+
+                  <% if @contactResult.valid? %>
+
+                   <div class="msg" id="success">
+                     <p><strong>Thank you!</strong> Your message has been successfully sent.</p>
+                   </div>
+
+                  <% else %>
+                   <div class="msg" id="error">
+                     <ul>
+                      <% @contactResult.errors.each do |field , message| %>
+                        <li><strong> * <%= field %></strong> <%= message %></li>
+                      <% end %>
+                     </ul>
+                   </div>
+                  <!-- Message Display box -->
+
+                  <% end %>
+                <% end %>
+
+                  <p>
+                    <label for="name">Your Name</label>
+                    <input type="text" name="name" value="" />
+                  </p>
+                  <p>
+                    <label for="email">Your Email</label>
+                    <input type="email" name="email" value="" />
+                  </p>
+                  <p>
+                    <label for="subject">Your Subject</label>
+                    <input type="text" name="subject" value="" />
+                  </p>
+                  <p>
+                    <label for="message">Your Message</label>
+                    <textarea name="message"></textarea>
+                  </p>
+                  <p>
+                    <input type="submit" id="contact-btn" value="Send" type="button"/>
+                  </p>
+                <% end %>
+              </div>
+              <!-- end post entry contnet-->
+            </div>
+            <!-- end post det-->
+            <div class="post-footer"></div>
+            <!-- end post footer-->
+          </article>
+          <!-- end Post wrap -->
+        </main>
+        <!-- EndContent-->
+
+      <%= render partial: 'partials/sidebar' %>
+
+      </section>
+      <!-- EndContentHolder-->
