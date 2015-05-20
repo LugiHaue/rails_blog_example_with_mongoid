@@ -60,7 +60,7 @@ class HomeController < ApplicationController
 
     else
 
-      raise 'Hatalı parametre'
+      raise 'Invalid Param'
 
     end
 

@@ -64,7 +64,7 @@ class PanelController < ApplicationController
 
     else
       
-      raise 'Invalid Params ^^ Harun ' 
+      raise 'Invalid Param: show' 
 
     end
 
@@ -150,8 +150,6 @@ class PanelController < ApplicationController
 
       content.save
 
-       #redirect_to pPost_url
-
       redirect_to :controller => 'panel', :action => 'post', :show => 'all'
 
     end
@@ -231,7 +229,7 @@ class PanelController < ApplicationController
 
     else
       
-      raise 'Invalid Params ^^ Harun ' 
+      raise 'Invalid Param: show'
 
     end
 
@@ -366,8 +364,6 @@ class PanelController < ApplicationController
     
       category = Category.find(params[:format])
 
-      #render html: category.inspect
-
       category.status = category.status ? false : true
 
       unless category.status
@@ -377,7 +373,6 @@ class PanelController < ApplicationController
         post.update_all({is_active: false})
 
       end
-
 
       category.save
 
