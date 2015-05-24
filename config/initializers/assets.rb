@@ -16,45 +16,25 @@ Rails.application.config.assets.version = '1.0'
  Rails.application.config.assets.precompile += %w( custom.js )
 
 
- #########################
- ##                     ## 
- ##      P A N E L      ##
- ##                     ##
- #########################
+ #################################
+ ##                     		## 
+ ##      D A S H B O A R D      ##
+ ##                     		##
+ #################################
 
  # Bootstrap core CSS
- Rails.application.config.assets.precompile += %w( panel/bootstrap.css )
+ Rails.application.config.assets.precompile += %w( dashboard/bootstrap.css )
 
  # External CSS
- Rails.application.config.assets.precompile += %w( panel/font-awesome/css/font-awesome.css )
- Rails.application.config.assets.precompile += %w( panel/zabuto_calendar.css )
- Rails.application.config.assets.precompile += %w( panel/gritter/jquery.gritter.css )
- Rails.application.config.assets.precompile += %w( panel/lineicons/style.css )
- Rails.application.config.assets.precompile += %w( panel/fancybox/jquery.fancybox.css )
+ Rails.application.config.assets.precompile += %w( dashboard/font-awesome/css/font-awesome.css )
+ Rails.application.config.assets.precompile += %w( dashboard/lineicons/style.css )
 
  # Custom styles for this template
- Rails.application.config.assets.precompile += %w( panel/style.css )
- Rails.application.config.assets.precompile += %w( panel/style-responsive.css )
+ Rails.application.config.assets.precompile += %w( dashboard/style.css )
+ Rails.application.config.assets.precompile += %w( dashboard/style-responsive.css )
 
 
  # Javascript
- Rails.application.config.assets.precompile += %w( panel/jquery.js )
- Rails.application.config.assets.precompile += %w( panel/jquery-1.8.3.min.js )
- Rails.application.config.assets.precompile += %w( panel/bootstrap.min.js )
- Rails.application.config.assets.precompile += %w( panel/jquery.dcjqaccordion.2.7.js )
- Rails.application.config.assets.precompile += %w( panel/jquery.scrollTo.min.js )
- Rails.application.config.assets.precompile += %w( panel/jquery.nicescroll.js )
- Rails.application.config.assets.precompile += %w( panel/jquery.sparkline.js )
-
- # Common script for all pages
- Rails.application.config.assets.precompile += %w( panel/common-scripts.js )
-
- Rails.application.config.assets.precompile += %w( panel/gritter/jquery.gritter.js )
- Rails.application.config.assets.precompile += %w( panel/gritter/gritter-conf.js )
-
- # Script
- Rails.application.config.assets.precompile += %w( panel/sparkline-chart.js )
- Rails.application.config.assets.precompile += %w( panel/zabuto_calendar.js )
- Rails.application.config.assets.precompile += %w( panel/chart-master/Chart.js )
- Rails.application.config.assets.precompile += %w( panel/fancybox/jquery.fancybox.js )
-
+ Rails.application.config.assets.precompile += %w( dashboard/jquery.js )
+ Rails.application.config.assets.precompile += %w( dashboard/bootstrap.min.js )
+ Rails.application.config.assets.precompile += %w( dashboard/jquery.dcjqaccordion.2.7.js )
