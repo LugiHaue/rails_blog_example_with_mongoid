@@ -1,0 +1,67 @@
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">
+ 
+                  <li class="mt">
+                      <a class="<%= @active_index %>" href="<%= index_url %>">
+                          <i class="fa fa-dashboard"></i>
+                          <span>Dashboard</span>
+                      </a>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a class="<%= @active_post %>" href="javascript:;" >
+                          <i class="fa fa-tasks"></i>
+                          <span>Posts</span>
+                      </a>
+                      <ul class="sub">
+                          <li><%= link_to 'New Posts' , new_post_url %></li>
+                          <li><%= link_to 'All Posts' , post_url('all') %></li>
+                          <li><%= link_to 'Active Posts' , post_url('active') %></li>
+                          <li><%= link_to 'Passive Posts' , post_url('passive') %></li>
+                      </ul>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a class="<%= @active_contact %>" href="javascript:;" >
+                          <i class="fa fa-comments-o"></i>
+                          <span>Contacts</span>
+                      </a>
+                      <ul class="sub">
+                          <li><%= link_to 'All Contacts' , contact_url('all') %></li>
+                          <li><%= link_to 'Read Contacts' , contact_url('read') %></li>
+                          <li><%= link_to 'Unread Contacts' , contact_url('unread') %></li>
+                      </ul>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a class="<%= @active_aboutPage %>" href="<%= edit_about_page_url(AboutPage.first) %>">
+                          <i class="fa fa-life-ring"></i>
+                          <span>About Page</span>
+                      </a>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a class="<%= @active_contactPage %>" href="<%= edit_contact_page_url(ContactPage.first) %>">
+                          <i class="fa fa-phone"></i>
+                          <span>Contact Page</span>
+                      </a>
+                  </li>
+                
+                  <li class="sub-menu">
+                      <a class="<%= @active_categories %>" href="javascript:;">
+                          <i class="fa fa-flag"></i>
+                          <span>Categories</span>
+                      </a>
+                      <ul class="sub">
+                          <li><%= link_to 'New Category' , new_category_url %></li>
+                          <li><%= link_to 'All Categories' , category_index_url %></li>
+
+                      </ul>
+                  </li>
+
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>

@@ -1,6 +1,5 @@
 class ContactPage
   include Mongoid::Document
-
   validates :title , :content , presence: true
 
   field :title, type: String

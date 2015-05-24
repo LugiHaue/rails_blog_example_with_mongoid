@@ -12,15 +12,12 @@
 	<%= stylesheet_link_tag    'style', media: 'screen', 'data-turbolinks-track' => true %>
 	<%= stylesheet_link_tag    'main', media: 'screen', 'data-turbolinks-track' => true %>
 	<%= stylesheet_link_tag    'media-queries', media: 'screen', 'data-turbolinks-track' => true %>
-
-	<%= stylesheet_link_tag    'home', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'home', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   </head>
 
 	<%= yield %>
 
-	<%= render partial: 'partials/footer' %>
+	<%= render partial: 'partials/home/footer' %>
 
 </div>
 </body>

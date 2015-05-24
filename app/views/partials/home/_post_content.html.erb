@@ -1,0 +1,41 @@
+     <% @posts.each do |post| %>
+
+        <article class="post-item box">
+          <!--End post content -->
+          <div class="post-det">
+            <h3>
+              <a href="<%= home_url(post) %>" title="<%= post.title %>">
+              <strong><%= post.title %></strong>
+              </a>
+              <!-- End post meta -->
+            </h3>
+  
+            <% unless (post.image.blank?) %>
+              <div class="post-img">
+                <img src="<%= image_path(post.image.image.url(:medium)) %>" alt="<%= post.title %>">
+              </div>
+            <% end %>
+
+            <div class="post-entry-content" style="padding-top: 25px">
+            <p><%= truncate(post.content.body , length: 500) %></p>
+              <p>
+              <%= link_to 'Read More →' , home_url(post) , class: 'read-more' %>
+              </p>
+            </div>
+            <!-- end post entry contnet-->
+          </div>
+          <!-- end post det-->
+          <div class="post-footer">
+            <div class="clearfix">
+              <time><%= post.created_at.strftime("%B %d, %Y - %H:%M:%S") %></time>
+              <span>
+              <% post.tags.each do |tag| %>
+                  <%= link_to tag , tag_home_index_url(tag) %>
+              <% end %>
+              </span>
+            </div>
+          </div>
+          <!-- end post footer-->
+        </article>
+
+      <% end %>

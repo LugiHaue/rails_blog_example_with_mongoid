@@ -1,0 +1,60 @@
+              <div class="row mt">
+                  <div class="col-md-12">
+                  <h4><i class="fa fa-angle-right"></i> New Category</h4>
+
+                  <% if @category.invalid? %>
+
+                    <ul class="list-group">
+
+                      <% @category.errors.each do |field , message| %>
+                          <li class="list-group-item list-group-item-danger"><strong><%= field %></strong> <%= message %></li>
+                      <% end %>
+
+                  </ul>
+
+                  <% end %>
+
+                      <div class="content-panel">
+                      <%= form_tag(category_url(@category) , {method: 'put' , role: 'form'}  ) do %>
+
+                          <div class="form-group col-md-8">
+                            <label for="name">Name:</label>
+                            <input type="text" name="name" value="<%= @category.name %>" class="form-control" id="name">
+                          </div>
+
+                      <div class="clearfix"></div>
+
+                          <div class="form-group col-md-8">
+                            <label for="order">Order:</label>
+                            <input type="text" name="order" value="<%= @category.order %>" class="form-control" id="order">
+                          </div>
+
+                      <div class="clearfix"></div>
+                                                
+                         <div class="form-group col-md-8">
+                          <label for="status">Status:</label>
+                          <select class="form-control" name="status" id="status">
+                              <% if @category.status %>
+                                <option selected="selected" value="true">Active</option>
+                                <option value="false">Passive</option>
+                              <% else %>
+                                <option selected="selected" value="false">Passive</option>
+                                <option value="true">Active</option>
+                              <% end %>
+                          </select>
+                        </div>
+
+                      <div class="clearfix"></div>
+
+                      <input type="hidden" value="<%= @category.id %>" name="id" />
+
+                        <div class="form-group col-md-8">
+                          <input class="btn btn-success" type="submit" value="Save">
+                        </div>
+                      
+                      <div class="clearfix"></div>
+
+                      <% end %>
+                      </div><!-- /content-panel -->
+                  </div><!-- /col-md-12 -->
+              </div><!-- /row -->

@@ -1,0 +1,13 @@
+      <div id="sub-header" class="clearfix">
+        <div class="subInner">
+          <ul id="submenu">
+          <% @categories.each do |category| %>
+
+            <li><%= link_to category.name , category_home_index_url(category) %><li>
+
+          <% end %>
+
+          </ul>
+        </div>
+      </div>
+      <!--Endsub-header-->

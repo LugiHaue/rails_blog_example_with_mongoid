@@ -1,8 +1,7 @@
 class Post
   include Mongoid::Document
   include Mongoid::Timestamps
-
-  validates :title , :category_id , :is_active , presence: true
+  validates :title, :category_id, :tags, :is_active, presence: true
 
   field :title, type: String
   field :category_id, type: String
@@ -12,8 +11,5 @@ class Post
 
   has_one :content
   belongs_to :image
-
   belongs_to :category
-
-
 end
