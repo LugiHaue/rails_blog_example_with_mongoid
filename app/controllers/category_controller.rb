@@ -60,7 +60,7 @@ class CategoryController < ApplicationController
   end
 
   def find
-    @category = Category.find(params[:id])
+    @category = Category.find(params[:id]) or return not_found
   end
 
   def postDisableById category_id

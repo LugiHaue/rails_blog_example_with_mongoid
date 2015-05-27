@@ -21,7 +21,7 @@ class AboutPageController < ApplicationController
   end
 
   def find
-    @about = AboutPage.first    
+    @about = AboutPage.first
   end
 
 end

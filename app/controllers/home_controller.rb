@@ -27,7 +27,7 @@ class HomeController < ApplicationController
   end
 
   def category
-    category = Category.where(_id: params[:format]).where(status: true).first
+    category = Category.where(_id: params[:format]).where(status: true).first or return not_found
     @posts = Post.where(category_id: category.id).where(is_active: true).order(created_at: :desc).page(params[:page]);
     @title = 'GreenFish | Category - ' + category.name
 
@@ -43,7 +43,7 @@ class HomeController < ApplicationController
   end
 
   def show
-    @post = Post.where(is_active: true).find(params[:id])
+    @post = Post.where(is_active: true).find(params[:id]) or return not_found
     @title = @post.title
   end
 

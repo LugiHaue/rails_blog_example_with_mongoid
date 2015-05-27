@@ -24,7 +24,7 @@ class ContactController < ApplicationController
     when 'unread'
       @contacts = Contact.where(status: false).order(created_at: :desc).page(params[:page])
     else
-      raise 'Invalid Param: show'
+      return not_found
     end
 
     @heading = @show.capitalize
@@ -54,7 +54,7 @@ class ContactController < ApplicationController
   end
 
   def find
-    @contact = Contact.find(params[:id])
+    @contact = Contact.find(params[:id]) or return not_found
   end
 
 end

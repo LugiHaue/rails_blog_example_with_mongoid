@@ -21,7 +21,7 @@ class ContactPageController < ApplicationController
   end
 
   def find
-    @contact = ContactPage.first    
+    @contact = ContactPage.first
   end
 
 end

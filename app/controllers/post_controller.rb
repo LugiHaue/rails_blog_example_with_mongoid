@@ -25,7 +25,7 @@ class PostController < ApplicationController
     when 'passive'
       @posts = Post.where(is_active: false).order(created_at: :desc).page(params[:page])
     else
-      raise 'Invalid Param: show' 
+      return not_found
     end
 
     @heading =  @show.capitalize
@@ -116,6 +116,6 @@ class PostController < ApplicationController
     end
 
     def find
-      @post = Post.find(params[:id])
+      @post = Post.find(params[:id]) or return not_found
     end
 end
